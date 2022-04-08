@@ -1,6 +1,6 @@
-{% load bootstrap5 %}
+{% load bootstrap4 %}
 {% load static %}
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 {% block content %}
 <style>
   .desc{
@@ -55,7 +55,7 @@
     <div class="card">
       <img src="{{image.image.url}}" alt="" class="img-responsive card-img-top">
       <div class="image-overlay">
-        <a href="{% url 'allcomments' image_id=image.id %}" ><i class="fas fa-comments">{{image.all_comments|length}}</i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="{% url 'allcomments' image.id %}" ><i class="fas fa-comments">{{image.all_comments|length}}</i></a>&nbsp;&nbsp;&nbsp;&nbsp;
         <a href=""><i class="fas fa-heart">{{image.all_likes}} </i></a>
         {% if user.profile == current_user.profile %}
         <i class="fas fa-trash" style="color: white;" data-toggle="modal" data-target="#delete"></i>
@@ -69,7 +69,7 @@
             <div class="modal-header">
             <div class="modal-body">
                 <p class="text-monospace">
-                  <a href="{% url 'delete' image_id=image.id %}" class="tooltip-test" style="color: red;" title="Tooltip">Delete</a>
+                  <a href="#" class="tooltip-test" style="color: red;" title="Tooltip">Delete</a>
                 </p>
                 <a class="modaloption button" data-dismiss="modal">
                     Cancel
@@ -85,7 +85,7 @@
 <div class="row mt-3 pt-3">
   <div class="col-md-6">
     <div class="card">
-      <img src="{% static 'img/insta.jpg' %}" alt="" class="img-responsive card-img-top">
+      <img src="../../static/img/insta.jpg" alt="" class="img-responsive card-img-top">
     </div>
   </div>
   <div class="col-md-6">
@@ -93,12 +93,13 @@
     <h4 class="text-center text-monospace font-weight-bold">Start capturing and sharing your moments.</h4>
     <p class="text-monospace text-center">Get the app to share your first photo or video</p>
     <div id="flex" class="pl-3 ml-3">
-      <img src="{% static 'img/insta1.png' %}" alt="" height="50" width="180" >
-      <img src="{% static 'img/insta2.png' %}" alt=""  height="50">
+      <img src="../../static/img/insta1.png" alt="" height="50" width="180" >
+      <img src="../../static/img/insta2.png" alt=""  height="50">
     </div>
     </div>
   </div>
 </div>
 {% endif %}
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 {% endblock %}

@@ -3,7 +3,7 @@
 {% load static %}
 {% block content %}
 {{block.super}}
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 <style>
   .dark{
     display: none;
@@ -23,15 +23,15 @@
 <div class="container">
   <div class="row">
     <div class="col-md-5">
-      <img src="{% static 'img/insta6.png' %}" class="light" alt="img">
-      <img src="{% static 'img/insta3.png' %}" class="dark" alt="img">
+      <img src="../../static/img/insta6.png" class="light" alt="img">
+      <img src="../../static/img/insta3.png" class="dark" alt="img">
     </div>
     <div class="col-md-4 pt-3 mt-3 bord">
       <form action="" method="POST">
         {% csrf_token %}
         <fieldset class="form-group">
           <label for="" class="border-bottom mb-4 text-center">Login</label>
-          {{form|crispy}}
+          {{form | crispy}}
         </fieldset>
         <div class="form-group">
           <button class="btn btn-outline-info" type="submit">Login</button>
@@ -41,12 +41,15 @@
         <small class="text-muted">Need an account ? <a href="{% url 'register' %}" class="ml-2">Register</a></small>
       </div>
       <div id="flex" class="pl-2 pt-3 mt-3">
-        <img src="{% static 'img/insta1.png' %}" alt="" height="50" width="180" >
-        <img src="{% static 'img/insta2.png' %}" alt=""  height="50">
+        <img src="../../static/img/insta1.png" alt="" height="50" width="180" >
+        <img src="../../static/img/insta3.png" alt=""  height="50">
       </div>
     </div>
     <div class="col-md-3"></div>
   </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 
 {% endblock %}
